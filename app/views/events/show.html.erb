@@ -1,37 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @event.image.url(:medium) %>
-</p>
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<div class="show-content">
+    <div class="chapter-banner">
+      <h1><%= @event.title %></h1>
+    </div>
+  <div class="group-description">
+    <div class="row">
+      <div class="col-md-5 image-content">
+        <%= image_tag @event.image.url, size: '430x500' %>
+      </div>
+      <div class="col-md-6 doc-content">
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+        <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-link' %> |
+        <%= link_to 'Back', events_path, class: 'btn btn-link' %>
 
- <p>
-  <strong>Start On:</strong>
-  <%= @event.start_on %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @event.genre %>
-</p>
-
-<p>
-  <strong>Venue:</strong>
-  <%= @event.venue %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @event.location %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+        <h3>Description:</h3>
+          <p><%= @event.description %></p>
+          <p>
+            <strong>Start On:</strong>
+              <%= @event.start_on %>
+          </p>
+          <p>
+            <strong>Genre:</strong>
+              <%= @event.genre %>
+          </p>
+          <p>
+            <strong>Venue:</strong>
+              <%= @event.venue %>
+          </p>
+          <p>
+            <strong>Location:</strong>
+              <%= @event.location %>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
