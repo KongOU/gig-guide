@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150825084234) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "start_on"
+    t.string   "genre"
   end
 
   create_table "musicians", force: :cascade do |t|
