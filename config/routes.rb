@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
 
+  resources :musicians
   resources :events
+  root 'welcome#index'
 
 end
