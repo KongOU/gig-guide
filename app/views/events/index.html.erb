@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Events</h1>
+<h1>Listing Gigs</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
       <th>Description</th>
       <th>Venue</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= image_tag event.image.url(:medium) %></td>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= event.venue %></td>
