@@ -22,3 +22,5 @@ Event.create(
             venue: 'Triangle Restaurant-Lounge-Bar',
             location: 'Sivatha Boulevard, Siem Reap Angkor- Kingdom of Cambodia'
             )
+Origin.create(name: 'Khmer')
+Origin.create(name: 'Western')
