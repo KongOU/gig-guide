@@ -35,7 +35,10 @@
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
-
+  <div class="field">
+    <%= f.label :Origin, class: "control-label" %> <br>
+    <%= f.collection_select :origin_id, Origin.all, :id, :name, {promt: "Choose a category"} %>
+  </div>
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :image %>
