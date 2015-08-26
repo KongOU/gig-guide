@@ -50,6 +50,9 @@ body{
   margin-left: 20px;
   margin-bottom: 10px;
 }
+.banner-img{
+  margin-top: -20px;
+}
 .chapter-banner{
   background-color: #c53236;
   padding: 12px 12px 12px;
@@ -99,8 +102,6 @@ body{
   }
 }
 .carousel-inner{
-
-
   img{
     width: 100% !important;
     height: 400px !important;
