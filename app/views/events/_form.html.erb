@@ -11,40 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :start_on %><br>
     <%= f.datetime_select :start_on %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :venue %><br>
-    <%= f.text_field :venue %>
+    <%= f.text_field :venue, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.text_field :location, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Origin, class: "control-label" %> <br>
     <%= f.collection_select :origin_id, Origin.all, :id, :name, {promt: "Choose a category"} %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
+  <div class="form-group">
+    <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,6 +1,11 @@
-<h1>Editing Event</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <h1>Editing Gigs</h1>
+        <%= render 'form' %>
+        <%= link_to 'Show', @event, class:'btn btn-link' %> |
+        <%= link_to 'Back', events_path, class:'btn btn-link' %>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
