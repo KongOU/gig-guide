@@ -29,7 +29,8 @@
   </div>
   <div class="field">
     <%= f.label :origin %><br>
-    <%= f.text_field :origin %>
+    <%= f.select(:origin, options_for_select([['Khmer'], ['USA']])) %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
