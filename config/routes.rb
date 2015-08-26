@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :events
   resources :musicians
   root 'welcome#index'
+
+  get '/khmer' => 'welcome#khmer'
+  get '/western' => 'welcome#western'
 end

@@ -32,6 +32,14 @@
             <strong>Location:</strong>
               <%= @event.location %>
           </p>
+          <p>
+            <strong>Origin:</strong>
+              <% if @event.origin.id == 1 %>
+                <%=  @event.origin.name %>
+              <% elsif @event.origin.id == 2 %>
+                <%=  @event.origin.name %>
+              <% end %>
+          </p>
       </div>
     </div>
   </div>
