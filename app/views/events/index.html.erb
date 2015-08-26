@@ -2,7 +2,7 @@
 
 <h1>Listing Gigs</h1>
 <%= link_to 'New Event', new_event_path %>
-<table>
+<table class="table table-splite">
   <thead>
     <tr>
       <th>Image</th>
@@ -19,9 +19,9 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= image_tag event.image.url(:medium) %></td>
+        <td><%= image_tag event.image.url, size: '100x100' %></td>
         <td><%= event.title %></td>
-        <td><%= event.description %></td>
+        <td><%= truncate(event.description, length: 50) %></td>
         <td><%= event.start_on %></td>
         <td><%= event.genre %></td>
         <td><%= event.venue %></td>
