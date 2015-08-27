@@ -1,47 +1,47 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
-<div class="show-content">
+  <div class="show-content">
     <div class="chapter-banner">
       <h1><%= @event.title %></h1>
     </div>
-  <div class="group-description">
-    <div class="row">
-      <div class="col-md-5 image-content">
-        <%= image_tag @event.image.url, size: '430x500' %>
-      </div>
-      <div class="col-md-6 doc-content">
+    <div class="group-description">
+      <div class="row">
+        <div class="col-md-5 image-content">
+          <%= image_tag @event.image.url, size: '430x500' %>
+        </div>
+        <div class="col-md-6 doc-content">
 
-        <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-link' %> |
-        <%= link_to 'Back', events_path, class: 'btn btn-link' %>
+          <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-link' %> |
+          <%= link_to 'Back', events_path, class: 'btn btn-link' %>
 
-        <h3>Description:</h3>
+          <h3>Description:</h3>
           <p><%= @event.description %></p>
           <p>
             <strong>Start On:</strong>
-              <%= @event.start_on %>
+            <%= @event.start_on %>
           </p>
           <p>
             <strong>Genre:</strong>
-              <%= @event.genre %>
+            <%= @event.genre %>
           </p>
           <p>
             <strong>Venue:</strong>
-              <%= @event.venue %>
+            <%= @event.venue %>
           </p>
           <p>
             <strong>Location:</strong>
-              <%= @event.location %>
+            <%= @event.location %>
           </p>
           <p>
             <strong>Origin:</strong>
-              <% if @event.origin.id == 1 %>
-                <%=  @event.origin.name %>
-              <% elsif @event.origin.id == 2 %>
-                <%=  @event.origin.name %>
-              <% end %>
+            <% if @event.origin.id == 1 %>
+            <%=  @event.origin.name %>
+            <% elsif @event.origin.id == 2 %>
+            <%=  @event.origin.name %>
+            <% end %>
           </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
