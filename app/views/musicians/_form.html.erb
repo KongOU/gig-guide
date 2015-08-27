@@ -10,28 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class:'form-control' %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, class:'form-control' %>
   </div>
- <div class="field">
+ <div class="form-group">
     <%= f.label :Origin %> <br>
     <%= f.collection_select :origin_id, Origin.all, :id, :name, {promt: "Choose a category"} %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
