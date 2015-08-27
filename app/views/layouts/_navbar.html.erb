@@ -21,7 +21,13 @@
             <li><%= link_to origin.name, western_path %></li>
           <% end %>
         <% end %>
-        <li><%= link_to 'Musicians', musicians_path  %></li>
+        <li>
+            <a href="#">Musicians &#9662;</a>
+            <ul class="dropdown">
+                <li><%= link_to 'Musician Khmer', musicians_path(origin_id: 1) %></li>
+                <li><%= link_to 'Musician Western', musicians_path(origin_id: 2) %></li>
+            </ul>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>

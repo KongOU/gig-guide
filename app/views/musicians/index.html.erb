@@ -2,9 +2,6 @@
 
 <h1>Musicians</h1>
 
-  <%= link_to 'Khmer', musicians_path(origin: 'Khmer') %>
-  <%= link_to 'Western', musicians_path(origin: 'USA') %>
-
 <table>
   <thead>
     <tr>
@@ -24,7 +21,7 @@
         <td><%= image_tag musician.image(:medium) %></td>
         <td><%= musician.description %></td>
         <td><%= musician.genre %></td>
-        <td><%= musician.origin %></td>
+        <td><%= musician.origin.name %></td>
         <td><%= link_to 'Show', musician %></td>
         <td><%= link_to 'Edit', edit_musician_path(musician) %></td>
         <td><%= link_to 'Destroy', musician, method: :delete, data: { confirm: 'Are you sure?' } %></td>
