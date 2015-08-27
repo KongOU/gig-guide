@@ -27,10 +27,9 @@
     <%= f.label :genre %><br>
     <%= f.text_field :genre %>
   </div>
-  <div class="field">
-    <%= f.label :origin %><br>
-    <%= f.select(:origin, options_for_select([['Khmer'], ['USA']])) %>
-
+ <div class="field">
+    <%= f.label :Origin %> <br>
+    <%= f.collection_select :origin_id, Origin.all, :id, :name, {promt: "Choose a category"} %>
   </div>
   <div class="actions">
     <%= f.submit %>

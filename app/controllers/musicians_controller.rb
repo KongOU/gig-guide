@@ -4,8 +4,8 @@ class MusiciansController < ApplicationController
   # GET /musicians
   # GET /musicians.json
   def index
-    if params[:origin]
-      @musicians = Musician.where(origin: params[:origin])
+    if params[:origin_id]
+      @musicians = Musician.where(origin_id: params[:origin_id])
     else
       @musicians = Musician.all
     end
@@ -73,6 +73,6 @@ class MusiciansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def musician_params
-      params.require(:musician).permit(:name, :description, :genre, :origin, :image)
+      params.require(:musician).permit(:name, :description, :genre, :origin_id, :image)
     end
 end
