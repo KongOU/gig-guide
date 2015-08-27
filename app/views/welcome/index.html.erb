@@ -27,7 +27,7 @@
     <% if event.origin_id == 1 %>
         <div class="col-md-4">
           <div class="main-photo">
-
+            <%= link_to (image_tag(event.image, size: '400x200', class:'nametag-photo')), event_path(event) %>
             <div class="group-title">
               <h3><%= link_to event.title, event_path(event) %></h3>
               <p><%= link_to event.start_on, event_path(event) %></p>
@@ -42,7 +42,7 @@
     <% if event.origin_id == 2 %>
         <div class="col-md-4">
           <div class="main-photo">
-
+            <%= link_to (image_tag(event.image, size: '400x200', class:'nametag-photo')), event_path(event) %>
             <div class="group-title">
               <h3><%= link_to event.title, event_path(event) %></h3>
               <p><%= link_to event.start_on, event_path(event) %></p>
