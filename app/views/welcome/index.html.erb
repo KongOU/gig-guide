@@ -23,7 +23,8 @@
 </div>
 <div class="container">
   <div class="row">
-  <% @events.each do |event| %>
+  <h1 class="text-center">All Gigs <%= @d %></h1>
+  <% @current_event.each do |event| %>
     <% if event.origin_id == 1 %>
         <div class="col-md-4">
           <div class="main-photo">
