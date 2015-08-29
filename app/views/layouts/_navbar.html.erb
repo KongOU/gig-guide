@@ -8,12 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'DevBootstrap Gigs', root_path, class: "navbar-brand logo_brand" %>
+      <%= link_to 'DB Gigs', root_path, class: "navbar-brand logo_brand btn btn-danger" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav menu-link">
         <% Origin.all.each do |origin| %>
           <% if origin.id == 1 %>
             <li><%= link_to origin.name, khmer_path %></li>
@@ -24,8 +24,8 @@
         <li>
             <a href="#">Musicians &#9662;</a>
             <ul class="dropdown">
-                <li><%= link_to 'Musician Khmer', musicians_path(origin_id: 1) %></li>
-                <li><%= link_to 'Musician Western', musicians_path(origin_id: 2) %></li>
+                <li><%= link_to 'Khmer', musicians_path(origin_id: 1) %></li>
+                <li><%= link_to 'Western', musicians_path(origin_id: 2) %></li>
             </ul>
         </li>
       </ul>

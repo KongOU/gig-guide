@@ -7,34 +7,50 @@ body{
   background-color: #fff !important;
 }
 .navbar ul li a{
-        display: block !important;
-        padding: 15px !important;
-        color: #333 !important;
-        text-decoration: none !important;
-        text-align: center;
-    }
+  display: block !important;
+  padding: 15px !important;
+  color: #333 !important;
+  font-size: 18px;
+  text-decoration: none !important;
+  text-align: center;
+  hover{
+    color: #e51937 !important;
+  }
+}
 .navbar ul li ul.dropdown{
-        min-width: 125px; /* Set width of the dropdown */
-        background: #f2f2f2;
-        display: none;
-        position: absolute;
-        z-index: 999;
-        text-align: center;
-        left: 0;
+  min-width: 125px; /* Set width of the dropdown */
+  background: #f2f2f2;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  left: 0;
+  }
+ul li:hover ul.dropdown{
+  display: inline-block !important; /* Display the dropdown */
+  padding: 0px !important;
+}
+ul li ul.dropdown li{
+  display: block;
+}
+.menu-link{
+  li a{
+  font-weight: bold !important;
+  color: #000 !important;
+     &:hover{
+      margin-top: -1px;
+      background-color: #e51937!important;
+      color: #fff !important;
     }
-    ul li:hover ul.dropdown{
-        display: block; /* Display the dropdown */
-    }
-    ul li ul.dropdown li{
-        display: block;
-    }
-
+  }
+}
 .logo_brand{
   font-size: 20px !important;
   font-family: Arial, Hevetica, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  color: #d5641c !important;
+  font-weight: bold !important;
+  color: #fff !important;
+  background-color:#e51937 !important;
+  margin-right: 5px;
 }
 .main-photo{
   width: 100%;
