@@ -1,6 +1,14 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def search
+    if params[:search].present?
+      @events = Event.search(params[:search])
+    else
+      @events = Event.all
+    end
+  end
+
   # GET /events
   # GET /events.json
   def index
