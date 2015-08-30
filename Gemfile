@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'devise', '~> 3.5.2'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'searchkick'
+gem 'better_errors'
 
 group :production do
   gem 'pg', '~> 0.18.2'
@@ -27,7 +28,6 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'better_errors'
   gem 'pry'
 end
 
