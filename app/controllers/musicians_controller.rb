@@ -1,5 +1,7 @@
 class MusiciansController < ApplicationController
   before_action :set_musician, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   # GET /musicians
   # GET /musicians.json
@@ -29,7 +31,7 @@ class MusiciansController < ApplicationController
   # POST /musicians.json
   def create
     @musician = Musician.new(musician_params)
-
+    @musician.user_id = current_user.id
     respond_to do |format|
       if @musician.save
         format.html { redirect_to @musician, notice: 'Musician was successfully created.' }
@@ -69,6 +71,12 @@ class MusiciansController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_musician
       @musician = Musician.find(params[:id])
+    end
+
+    def check_user
+      unless @musician.user == current_user
+        redirect_to root_url, alert: "Sorry, this gigs belongs to someone else."
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
