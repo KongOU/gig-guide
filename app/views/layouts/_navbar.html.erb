@@ -15,29 +15,34 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav menu-link">
         <% Origin.all.each do |origin| %>
-          <% if origin.id == 1 %>
-            <li><%= link_to origin.name, khmer_path %></li>
-          <% elsif origin.id == 2 %>
-            <li><%= link_to origin.name, western_path %></li>
-          <% end %>
+        <% if origin.id == 1 %>
+        <li><%= link_to origin.name, khmer_path %></li>
+        <% elsif origin.id == 2 %>
+        <li><%= link_to origin.name, western_path %></li>
+        <% end %>
         <% end %>
         <li>
-            <a href="#">Musicians &#9662;</a>
-            <ul class="dropdown">
-                <li><%= link_to 'Khmer', musicians_path(origin_id: 1) %></li>
-                <li><%= link_to 'Western', musicians_path(origin_id: 2) %></li>
-            </ul>
+        <a href="#">Band &#9662;</a>
+          <ul class="dropdown">
+            <li><%= link_to 'Khmer', musicians_path(origin_id: 1) %></li>
+            <li><%= link_to 'Western', musicians_path(origin_id: 2) %></li>
+          </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+        <% else %>
         <li><%= link_to "Sign In", new_user_session_path %></li>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <% end %>
-      <li><%= link_to 'New Event', new_event_path, class: 'btn btn-primary create-event' %></li>
+        <% end %>
+        <li><%= link_to 'New Event', new_event_path, class: 'btn btn-primary create-event' %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
