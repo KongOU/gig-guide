@@ -9,7 +9,7 @@
 <body>
 
 <%= render 'layouts/navbar' %>
-<div class="flash">
+<div>
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
     <div class="alert alert-<%= name == 'notice' ? 'success' : 'danger' %> alert-dismissable">
