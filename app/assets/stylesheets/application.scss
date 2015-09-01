@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+/* Integrating bootstrap */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+footer {
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  text-align: center;
+  color: black;
+  a {
+    color: black;
+    &:hover {
+      text-decoration: none;
+      background-color: #fff;
+      color: #4B8CF7;
+    }
+  }
+}
+.img-center {
+  text-align: center;
+}

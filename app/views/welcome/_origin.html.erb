@@ -2,7 +2,6 @@
   <%= render 'layouts/banner' %>
 </div>
 <div class="container">
-<%= link_to 'New Event', new_event_path, class: 'btn btn-primary' %>
   <div class="row">
   <% @events.each do |event| %>
       <div class="col-md-4">
