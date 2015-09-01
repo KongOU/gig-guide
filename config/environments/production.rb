@@ -78,5 +78,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Required for Devise, remember to change localhost:3000 to actual application host.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { :host => 'devbootstrap-gigs.herokuapp.com' }
+
+  # Add this line if I get the following error: ActionView::Template::Error: Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true
+  # Rails.application.routes.default_url_options[:host] = 'yoursite.herokuapp.com'
+
 end
