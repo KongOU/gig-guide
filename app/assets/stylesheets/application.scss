@@ -17,10 +17,10 @@
 /* Integrating bootstrap */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-$light: #eaeaea;
+
 footer {
   padding-top: 5px;
-  border-top: 1px solid $light;
+  border-top: 1px solid #eaeaea;
   text-align: center;
   color: black;
   a {
