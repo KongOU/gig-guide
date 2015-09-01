@@ -1,4 +1,19 @@
 class Event < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search,
+                  against: %i(
+                    title
+                    location
+                    genre
+                    venue
+                  ),
+                  using: {
+                    tsearch: {
+                      dictionary: 'english',
+                      any_word: true,
+                      prefix: true
+                    }
+                  }
   belongs_to :origin
   belongs_to :user
   scope :khmer, -> { where(origin_id: 1).order('created_at DESC') }
