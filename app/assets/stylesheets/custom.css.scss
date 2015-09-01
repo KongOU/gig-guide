@@ -3,6 +3,19 @@
 @import "bootstrap";
 $light: #eaeaea;
 
+
+.create-event{
+  background-color: #4dc2f6 !important;
+  border: none !important;
+  color: #fff !important;
+  &:a{
+    color: #fff !important;
+  }
+  &:hover{
+    color: #fff !important;
+  }
+}
+
 footer {
   padding-top: 5px;
   border-top: 1px solid $light;
