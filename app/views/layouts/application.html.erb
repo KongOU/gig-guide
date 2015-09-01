@@ -8,8 +8,8 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' %>
-<div>
+  <%= render 'layouts/navbar' %>
+  <div>
     <% flash.each do |name, msg| %>
     <% if msg.is_a?(String) %>
     <div class="alert alert-<%= name == 'notice' ? 'success' : 'danger' %> alert-dismissable">
@@ -21,8 +21,9 @@
       <% end %>
       <% end %>
     </div>
+  </div>
   <%= yield %>
-<%= render 'layouts/footer' %>
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
