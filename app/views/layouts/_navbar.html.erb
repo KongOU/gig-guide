@@ -16,13 +16,18 @@
       <ul class="nav navbar-nav menu-link">
         <% Origin.all.each do |origin| %>
         <% if origin.id == 1 %>
-        <li><%= link_to origin.name, khmer_path %></li>
-        <% elsif origin.id == 2 %>
-        <li><%= link_to origin.name, western_path %></li>
-        <% end %>
-        <% end %>
         <li>
-        <a href="#">Band &#9662;</a>
+          <a href="#">Gigs &#9662;</a>
+          <ul class="dropdown">
+            <li><%= link_to origin.name, khmer_path %></li>
+            <% elsif origin.id == 2 %>
+            <li><%= link_to origin.name, western_path %></li>
+            <% end %>
+            <% end %>
+            </ul>
+          </li>
+        <li>
+          <a href="#">Bands &#9662;</a>
           <ul class="dropdown">
             <li><%= link_to 'Khmer', musicians_path(origin_id: 1) %></li>
             <li><%= link_to 'Western', musicians_path(origin_id: 2) %></li>
