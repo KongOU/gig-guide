@@ -12,9 +12,10 @@ default: &default
 
 development:
   <<: *default
-  database: gig_development
-  username: kong
-  password: kong
+  database: gigs_development
+  host: localhost
+  username: gigs
+  password: p@ssword
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,4 +26,4 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: gig_production
