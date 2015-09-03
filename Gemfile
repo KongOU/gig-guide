@@ -18,6 +18,8 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'better_errors'
 gem 'pg_search'
 gem 'pg', '~> 0.18.2'
+gem 'rails_admin'
+gem 'cancancan'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.3'

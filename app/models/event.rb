@@ -33,4 +33,30 @@ class Event < ActiveRecord::Base
   end
   validates :title, :genre, :venue, :location, :origin, presence: true
   validates :description, presence: true, length: {minimum: 50}
+
+  rails_admin do
+    navigation_icon 'icon-calendar'
+    label " Gigs"
+    list do
+      field :image
+      field :title
+      field :description
+      field :start_on
+      field :genre
+      field :venue
+      field :location
+      field :origin
+    end
+
+    edit do
+      field :title
+      field :description
+      field :start_on
+      field :genre
+      field :venue
+      field :location
+      field :origin
+      field :image
+    end
+  end
 end
