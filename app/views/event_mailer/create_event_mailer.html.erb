@@ -1,5 +1,10 @@
-<h1>EventMailer#create_event_mailer</h1>
+<h3>Hi! <%= @event.user.username %></h3>
 
 <p>
+  A new event was posted in <%= link_to "Devbootstrap Gigs",root_url %>
+</p>
 
+<p>
+  Event name <strong><%= @event.title %></strong><br />
+  <%= link_to "Click Here to see event", event_url(@event), class: "btn btn-lg btn-primary btn-block" %>
 </p>
