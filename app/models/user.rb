@@ -7,4 +7,22 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  rails_admin do
+    navigation_label 'Administrator'
+    navigation_icon 'icon-user'
+    label " User"
+    list do
+      field :admin
+      field :username
+      field :email
+    end
+
+    edit do
+      field :admin
+      field :username
+      field :email
+      field :password
+      field :password_confirmation
+    end
+  end
 end

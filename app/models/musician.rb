@@ -14,4 +14,24 @@ class Musician < ActiveRecord::Base
   end
   validates :name, :genre, :origin, presence: true
   validates :description, presence: true, length: {minimum: 20}
+
+  rails_admin do
+    navigation_icon 'icon-music'
+    label " Band"
+    list do
+      field :image
+      field :name
+      field :description
+      field :genre
+      field :origin
+    end
+
+    edit do
+      field :name
+      field :description
+      field :genre
+      field :origin
+      field :image
+    end
+  end
 end
