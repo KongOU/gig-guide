@@ -141,6 +141,12 @@ ul li ul.dropdown li{
     line-height: 2em;
   }
 }
+.musician-banner{
+  background-color: #c53236;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  border-bottom: 8px solid rgba(255,255,255,.25);
+}
 .doc-content{
   font-size: 17px;
   line-height: 2.1em;
@@ -283,5 +289,13 @@ input[type="password"] {
     margin-top: 2px;
     font-size: 14px;
     line-height: 1.5em;
+  }
+}
+
+.add_new_musician{
+  margin-bottom: 15px;
+  a{
+    float: right !important;
+    margin-right: 13px !important;
   }
 }

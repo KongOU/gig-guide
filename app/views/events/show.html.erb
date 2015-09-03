@@ -9,15 +9,21 @@
           <%= image_tag @event.image.url, size: '430x500' %>
         </div>
         <div class="col-md-6 doc-content">
-
-          <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-link' %> |
-          <%= link_to 'Back', events_path, class: 'btn btn-link' %>
-
+        <% if user_signed_in? %>
+        <% if @event.user == current_user %>
+          <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-info' %> |
+          <%= link_to 'Delete', event_path, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+        <% end %>
+        <% end %>
           <h3>Description:</h3>
           <p><%= @event.description %></p>
           <p>
-            <strong>Start On:</strong>
-            <%= @event.start_on %>
+            <strong>Start Date:</strong>
+            <%= @event.start_on.strftime("%Y %m %d") %>
+          </p>
+           <p>
+            <strong>Start Time:</strong>
+            <%= @event.start_on.strftime(" %I %M %p") %>
           </p>
           <p>
             <strong>Genre:</strong>
@@ -44,3 +50,4 @@
     </div>
   </div>
 </div>
+

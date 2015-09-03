@@ -1,5 +1,7 @@
 <div class="container">
-  <%= link_to 'New Musician', new_musician_path %>
+  <div class="container add_new_musician">
+  <%= link_to 'New Musician', new_musician_path, class: 'btn btn-info' %>
+  </div>
   <div class="row">
     <% @musicians.each do |musician| %>
     <div class="col-md-6">
@@ -13,9 +15,8 @@
           <p>Description:<%= musician.description %> </p>
           <p>Genre: <%= musician.genre %></p>
           <p>Origin: <%= musician.origin.name %></p>
-          <%= link_to 'Show', musician %> |
-          <%= link_to 'Edit', edit_musician_path(musician) %> |
-          <%= link_to 'Destroy', musician, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', musician %>
+
       </div>
       <% elsif musician.origin_id == 2 %>
         <div class="col-md-5">
@@ -26,9 +27,8 @@
           <p>Description:<%= musician.description %> </p>
           <p>Genre: <%= musician.genre %></p>
           <p>Origin: <%= musician.origin.name %></p>
-          <%= link_to 'Show', musician %> |
-          <%= link_to 'Edit', edit_musician_path(musician) %> |
-          <%= link_to 'Destroy', musician, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', musician %>
+
       </div>
         <% end %>
       </div>

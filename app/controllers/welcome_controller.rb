@@ -8,10 +8,10 @@ class WelcomeController < ApplicationController
   end
 
   def khmer
-    @events = Event.khmer
+    @events = Event.khmer.order('created_at DESC')
   end
 
   def western
-    @events = Event.western
+    @events = Event.western.order('created_at DESC')
   end
 end

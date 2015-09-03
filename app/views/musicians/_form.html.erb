@@ -1,36 +1,44 @@
 <%= form_for @musician, html: { multipart: true } do |f| %>
-  <% if @musician.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@musician.errors.count, "error") %> prohibited this musician from being saved:</h2>
+<% if @musician.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@musician.errors.count, "error") %> prohibited this musician from being saved:</h2>
 
-      <ul>
-      <% @musician.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @musician.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="form-group">
+  <%= f.label :name %><br>
+  <%= f.text_field :name, class:'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :description %><br>
+  <%= f.text_area :description, class:'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :genre %><br>
+  <%= f.text_field :genre, class:'form-control', placeholder: 'ex: Rock, Pop, Jazz, Hip-Hop, Rap ...' %>
+</div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :Origin %> <br>
+      <%= f.collection_select :origin_id, Origin.all, :id, :name, {prompt: "Choose a category"}, class: 'form-control' %>
     </div>
-  <% end %>
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class:'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, class:'form-control' %>
+</div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-5">
+      <%= f.label :image %><br>
+      <%= f.file_field :image, class: 'form-control' %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :genre %><br>
-    <%= f.text_field :genre, class:'form-control' %>
-  </div>
- <div class="form-group">
-    <%= f.label :Origin %> <br>
-    <%= f.collection_select :origin_id, Origin.all, :id, :name, {promt: "Choose a category"} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.submit class: 'btn btn-primary' %>
-  </div>
+</div>
+<div class="form-group">
+  <%= f.submit class: 'btn btn-primary' %>
+</div>
 <% end %>

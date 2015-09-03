@@ -18,8 +18,8 @@ class Event < ActiveRecord::Base
   belongs_to :user
   scope :khmer, -> { where(origin_id: 1).order('created_at DESC') }
   scope :western, -> { where(origin_id: 2).order('created_at DESC') }
-  scope :current_event, -> { where('start_on BETWEEN ? AND ?', Date.current.beginning_of_day, Date.current.end_of_day).order(start_on: :DESC).limit(20) }
-  scope :yesterday_event, -> { where('start_on BETWEEN ? AND ?', Date.yesterday.beginning_of_day, Date.yesterday.end_of_day).order(start_on: :DESC).limit(20) }
+  scope :current_event, -> { where('start_on BETWEEN ? AND ?', Date.current.beginning_of_day, Date.current.end_of_day).order(created_at: :DESC).limit(9) }
+  scope :yesterday_event, -> { where('start_on BETWEEN ? AND ?', Date.yesterday.beginning_of_day, Date.yesterday.end_of_day).order(created_at: :DESC).limit(9) }
 
   if Rails.env.development?
     has_attached_file :image, styles: { medium: "200x200>", thumb: "100x100>" }, default_url: 'default.png'
@@ -31,6 +31,6 @@ class Event < ActiveRecord::Base
                       :path => ":style/:id_:filename"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   end
-  validates :title, :genre, :venue, :location, presence: true
+  validates :title, :genre, :venue, :location, :origin, presence: true
   validates :description, presence: true, length: {minimum: 50}
 end
