@@ -9,8 +9,40 @@
 </div>
 <div class="container">
   <div class="row">
-  <h1 class="text-center">All Gigs <%= @d %></h1>
+  <h1 class="text-center">Today Gigs <%= @d %></h1>
   <% @current_event.each do |event| %>
+    <% if event.origin_id == 1 %>
+        <div class="col-md-4">
+          <div class="main-photo">
+            <%= link_to (image_tag(event.image, size: '400x200', class:'nametag-photo')), event_path(event) %>
+            <div class="group-title">
+              <h3><%= link_to event.title, event_path(event) %></h3>
+              <p><%= link_to event.start_on.strftime("%Y %m %d %I %M %p"), event_path(event) %></p>
+              <p><%= link_to truncate(event.location, length: 50), event_path(event) %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+
+  <% @current_event.each do |event| %>
+    <% if event.origin_id == 2 %>
+        <div class="col-md-4">
+          <div class="main-photo">
+            <%= link_to (image_tag(event.image, size: '400x200', class:'nametag-photo')), event_path(event) %>
+            <div class="group-title">
+              <h3><%= link_to event.title, event_path(event) %></h3>
+              <p><%= link_to event.start_on.strftime("%Y %m %d %I %M %p"), event_path(event) %></p>
+              <p><%= link_to truncate(event.location, length: 50), event_path(event) %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="row">
+  <h1 class="text-center">Yesterday Gigs <%= @y %></h1>
+  <% @yesterday_event.each do |event| %>
     <% if event.origin_id == 1 %>
         <div class="col-md-4">
           <div class="main-photo">
