@@ -12,4 +12,6 @@ class Musician < ActiveRecord::Base
                       :path => ":style/:id_:filename"
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   end
+  validates :name, :genre, presence: true
+  validates :description, presence: true, length: {minimum: 20}
 end
