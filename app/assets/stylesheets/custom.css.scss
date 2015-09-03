@@ -146,6 +146,26 @@ ul li ul.dropdown li{
   margin-bottom: 20px;
   margin-top: 40px;
   border-bottom: 8px solid rgba(255,255,255,.25);
+  h1{
+    color: #fff;
+  }
+  a{
+    float: right;
+        margin-top: -47px;
+  }
+}
+.band-index{
+  background-color: #c53236;
+  padding: 12px 12px 12px;
+  margin-bottom: 20px;
+  border-bottom: 8px solid rgba(255,255,255,.25);
+  h1{
+    color: #fff;
+  }
+  a{
+    float: right;
+        margin-top: -47px;
+  }
 }
 .doc-content{
   font-size: 17px;
