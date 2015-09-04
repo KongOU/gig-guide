@@ -49,8 +49,8 @@ Rails.application.configure do
     domain: "https://devbootstrap-gigs.herokuapp.com/",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "devbootstrapgig@gmail.com",
-    password: "12345Gig"
+    user_name: ENV["USER_NAME"],
+    password: ENV["PASSWORD"]
   }
 
 end
