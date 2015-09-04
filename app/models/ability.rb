@@ -7,10 +7,6 @@ class Ability
     #   user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-    else
-      can :access, :rails_admin
-      can :dashboard
-      can :manage, [Event, Musician, Origin]
     end
     #
     # The first argument to `can` is the action you are giving the user
