@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Origin.create(name: 'Khmer Gigs')
-Origin.create(name: 'Western Gigs')
+Origin.create(name: 'Khmer')
+Origin.create(name: 'Western')

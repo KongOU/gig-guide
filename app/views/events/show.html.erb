@@ -5,23 +5,25 @@
     </div>
     <div class="group-description">
       <div class="row">
-        <div class="col-md-5 image-content">
-          <%= image_tag @event.image.url, size: '430x500' %>
+        <div class="col-md-5 col-sm-5 col-xs-5 image-content">
+        <%= image_tag @event.image.url, size: '430x500', class: 'img-responsive' %>
         </div>
-        <div class="col-md-6 doc-content">
-        <% if user_signed_in? %>
-        <% if @event.user == current_user %>
+        <div class="col-md-6 col-sm-6 col-xs-6 doc-content">
+          <% if (user_signed_in?) && (@event.user == current_user) %>
           <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-info' %> |
           <%= link_to 'Delete', event_path, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
-        <% end %>
-        <% end %>
+          <% else %>
+          <%= link_to 'Join Us', new_event_register_path(@event),:data => {:toggle => "modal"}, :data =>{:target =>"#myModal'"}, class: 'btn btn-success' %>
+          <% end %>
+          <%= pluralize(@event.registers.size, 'Member') %>
+
           <h3>Description:</h3>
           <p><%= @event.description %></p>
           <p>
             <strong>Start Date:</strong>
             <%= @event.start_on.strftime("%Y %m %d") %>
           </p>
-           <p>
+          <p>
             <strong>Start Time:</strong>
             <%= @event.start_on.strftime(" %I %M %p") %>
           </p>
