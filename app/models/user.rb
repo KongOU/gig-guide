@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
       field :username
       field :email
     end
-
     edit do
       field :admin
       field :username
