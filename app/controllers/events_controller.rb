@@ -1,14 +1,10 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, expect: [:show]
+  before_action :authenticate_user!, except: [:search,:show]
   before_action :check_user, only: [:edit, :update, :destroy]
 
   def search
-    if params[:search].present?
       @events = Event.search(params[:search])
-    else
-      @events = Event.all
-    end
   end
 
   # GET /events
@@ -29,6 +25,7 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+
   end
 
   # POST /events
@@ -38,12 +35,14 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        EventMailer.create_event_mailer(@event).deliver
+        format.html { redirect_to @event, notice: 'Gig was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
@@ -52,7 +51,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to @event, notice: 'Gig was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -66,7 +65,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Gig was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

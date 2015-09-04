@@ -1,6 +1,8 @@
 <div class="container">
-  <%= link_to 'New Musician', new_musician_path %>
   <div class="row">
+  <div class="band-index">
+      <h1> Band</h1>
+    </div>
     <% @musicians.each do |musician| %>
     <div class="col-md-6">
       <div class="row">
@@ -9,27 +11,32 @@
           <%= image_tag musician.image, size: '200x200' %>
         </div>
         <div class="col-md-7">
-          <h5><%= musician.name %></h5>
-          <p>Description:<%= musician.description %> </p>
+          <h5>Brand Name: <%= musician.name %></h5>
+          <p>Description: <%= musician.description %> </p>
           <p>Genre: <%= musician.genre %></p>
           <p>Origin: <%= musician.origin.name %></p>
-          <%= link_to 'Show', musician %> |
-          <%= link_to 'Edit', edit_musician_path(musician) %> |
-          <%= link_to 'Destroy', musician, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Show', musician %>
+        </div>
+        <% end %>
       </div>
-      <% elsif musician.origin_id == 2 %>
+    </div>
+    <% end %>
+<!-- Western Band -->
+
+    <% @musicians.each do |musician| %>
+    <div class="col-md-6">
+      <div class="row">
+        <% if musician.origin_id == 2 %>
         <div class="col-md-5">
           <%= image_tag musician.image, size: '200x200' %>
         </div>
         <div class="col-md-7">
-          <h5><%= musician.name %></h5>
-          <p>Description:<%= musician.description %> </p>
+          <h5>Brand Name: <%= musician.name %></h5>
+          <p>Description: <%= musician.description %> </p>
           <p>Genre: <%= musician.genre %></p>
           <p>Origin: <%= musician.origin.name %></p>
-          <%= link_to 'Show', musician %> |
-          <%= link_to 'Edit', edit_musician_path(musician) %> |
-          <%= link_to 'Destroy', musician, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+          <%= link_to 'Show', musician %>
+        </div>
         <% end %>
       </div>
     </div>

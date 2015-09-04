@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @register.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @register.lastname %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @register.gender %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @register.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @register.email %>
+</p>
+
+<%= link_to 'Edit', edit_register_path(@register) %> |
+<%= link_to 'Back', registers_path %>

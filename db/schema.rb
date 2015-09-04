@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901124212) do
+ActiveRecord::Schema.define(version: 20150904044251) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150901124212) do
     t.string   "genre"
     t.integer  "origin_id"
     t.integer  "user_id"
+    t.integer  "register_id"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
@@ -39,7 +43,6 @@ ActiveRecord::Schema.define(version: 20150901124212) do
     t.string   "name"
     t.text     "description"
     t.string   "genre"
-    t.string   "origin"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "image_file_name"
@@ -59,6 +62,19 @@ ActiveRecord::Schema.define(version: 20150901124212) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "registers", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "gender"
+    t.string   "address"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "event_id"
+  end
+
+  add_index "registers", ["event_id"], name: "index_registers_on_event_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -72,6 +88,8 @@ ActiveRecord::Schema.define(version: 20150901124212) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -80,4 +98,5 @@ ActiveRecord::Schema.define(version: 20150901124212) do
   add_foreign_key "events", "users"
   add_foreign_key "musicians", "origins"
   add_foreign_key "musicians", "users"
+  add_foreign_key "registers", "events"
 end

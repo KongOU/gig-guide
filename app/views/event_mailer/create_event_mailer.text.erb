@@ -1,0 +1,6 @@
+Hi! <%= @event.user.username %>
+
+  A new event was posted in <%= link_to "Devbootstrap Gigs",root_url %>
+
+  Event name <strong><%= @event.title %>
+  <%= link_to "Click Here to see event", event_url(@event), class: "btn btn-lg btn-primary btn-block" %>
