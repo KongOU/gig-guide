@@ -86,8 +86,8 @@ Rails.application.configure do
     domain: "https://devbootstrap-gigs.herokuapp.com/",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["USER_NAME"],
-    password: ENV["PASSWORD"]
+    user_name: "devbootstrapgig@gmail.com",
+    password: "12345Gig"
   }
 
   # Add this line if I get the following error: ActionView::Template::Error: Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true
