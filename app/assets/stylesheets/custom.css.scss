@@ -24,10 +24,15 @@ footer {
   a {
     color: black;
     &:hover {
-      text-decoration: none;
+      text-decoration: none !important;
       background-color: #fff;
       color: #4B8CF7;
     }
+  }
+}
+.footer-link{
+  a{
+    text-decoration: none !important;
   }
 }
 .img-center {
