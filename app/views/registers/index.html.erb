@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Registers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Gender</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @registers.each do |register| %>
+      <tr>
+        <td><%= register.firstname %></td>
+        <td><%= register.lastname %></td>
+        <td><%= register.gender %></td>
+        <td><%= register.address %></td>
+        <td><%= register.email %></td>
+        <td><%= link_to 'Show', event_register_path(@event,register) %></td>
+        <td><%= link_to 'Edit', edit_event_register_path(@event,register) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Register', new_event_register_path %>

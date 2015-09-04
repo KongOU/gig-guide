@@ -2,9 +2,9 @@
   <%= render 'layouts/banner' %>
 </div>
 <div class="container">
-  <%= form_tag search_events_path, method: :get, class: 'navbar-form navbar-left' do %>
-  <%= text_field_tag :search, params[:search], class: 'form-control' %>
-  <%= submit_tag 'Search', name: nil, class: 'btn btn-default' %>
+  <%= form_tag search_events_path, method: :get, class: '' do %>
+  <%= text_field_tag :search, params[:search], class: 'form-control', placeholder:"fdfs" %>
+  <%= submit_tag 'Search', name: nil, class: 'btn btn-danger' %>
   <% end %>
 </div>
 <div class="container">

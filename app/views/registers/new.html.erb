@@ -1,0 +1,20 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title" id="myModalLabel">Registration</h2>
+    </div>
+    <div class="modal-body">
+    <legend class="text-center"><%= @event.title %></legend>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+         <%= render 'form' %>
+       </div>
+     </div>
+   </div>
+   <div class="modal-footer" style="border: none">
+     <%= link_to 'Cancel', event_path(@event), class: "btn btn-default" %>
+   </div>
+ </div>
+</div>
+</div>
